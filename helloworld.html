@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <meta charset="UTF-8">
+    <title>Vue Intro</title>
+</head>
+<body>
+<div id="exercise">
+    <p>{{name}}</p>
+    <p>{{age}}</p>
+    <p>{{age*3}}</p>
+    <p>{{ callRandom() }}</p>
+
+    <div>
+        <img style="width:100px;height:100px" v-bind:src="link">
+    </div>
+
+    <div>
+        <input type="text" v-bind:value="name">
+    </div>
+
+    <div>
+        <button v-on:click="increaseCounter()">Click me</button>
+        <p>{{counter}}</p>
+    </div>
+
+
+</div>
+<script>
+   var sample = new Vue ({
+       el: '#exercise',
+       data: {
+           name : 'sanjeedha',
+           age: '27',
+           link: 'http://sf1.viepratique.fr/wp-content/uploads/sites/5/2014/10/shutterstock_102978833.jpg',
+           counter: 0
+       },
+       methods:{
+           callRandom : function(){
+               return Math.random();
+           },
+           increaseCounter: function(){
+               return this.counter++;
+           }
+       }
+
+   });
+
+
+
+</script>
+</body>
+</html>
